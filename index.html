@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="프론트엔드 개발자 오세진의 포트폴리오. 프로젝트, 스킬, 연락처 정보를 확인하세요.">
+    <title>포트폴리오 - 개발자</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="html.jpg" type="image/jpeg">
+    <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme')||'light');</script>
+</head>
+<body>
+    <!-- 네비게이션 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Portfolio</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">홈</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">소개</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">프로젝트</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">스킬</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">연락처</a>
+                </li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="다크 모드 전환" aria-pressed="false">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="hamburger" aria-label="모바일 메뉴 열기" aria-controls="nav-menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 메인 섹션 -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">안녕하세요, 프론트엔드 개발자 오세진입니다.</h1>
+                <p class="hero-description">프론트엔드 개발자로 창의적이고 혁신적인 웹 솔루션을 만드는 것을 좋아합니다</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
+                    <a href="#contact" class="btn btn-secondary">연락하기</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-card">
+                    <div class="profile-img">
+                        <img src="html.jpg" alt="오세진 프로필 사진" class="profile-photo">
+                    </div>
+                    <div class="profile-badges" aria-hidden="true">
+                        <span class="badge badge-primary">프론트엔드 개발자</span>
+                        <span class="badge badge-accent">성실함</span>
+                        <span class="badge badge-secondary">팀워크</span>
+                        <span class="badge badge-outline">지속적 학습</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 소개 섹션 -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">소개</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>개발자로서의 여정</h3>
+                    <p>웹 개발에 대한 열정을 가지고 있으며, 사용자 경험을 중시하는 프론트엔드 개발자입니다. 
+                    최신 기술을 학습하고 적용하는 것을 좋아하며, 팀워크를 중요하게 생각합니다.</p>
+                    <p>현재는 프론트엔드 개발에 집중하고 있으며, 사용자 친화적인 인터페이스를 만드는 것을 목표로 하고 있습니다.</p>
+                    
+                    <div class="education">
+                        <h4>학력</h4>
+                        <ul class="education-list">
+                            <li>연현중학교 졸업</li>
+                            <li>안양공업고등학교 재학중</li>
+                            <li>대림대학교 진학 예정</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h4>신입</h4>
+                        <p>경력</p>
+                    </div>
+                    <div class="stat">
+                        <h4>열정</h4>
+                        <p>100%</p>
+                    </div>
+                    <div class="stat">
+                        <h4>학습</h4>
+                        <p>지속중</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 프로젝트 섹션 -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">프로젝트</h2>
+            <div class="projects-filter" role="tablist" aria-label="프로젝트 필터">
+                <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">전체</button>
+                <button class="filter-btn" data-filter="frontend" role="tab" aria-selected="false">프론트엔드</button>
+                <button class="filter-btn" data-filter="app" role="tab" aria-selected="false">앱</button>
+                <button class="filter-btn" data-filter="dashboard" role="tab" aria-selected="false">대시보드</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="frontend">
+                    <div class="project-image">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>E-commerce Website</h3>
+                        <p>Online shopping mall built with React and Node.js.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Demo</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="app">
+                    <div class="project-image">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Todo Management App</h3>
+                        <p>Intuitive todo management application built with Vue.js.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">LocalStorage</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Demo</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="dashboard">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Data Dashboard</h3>
+                        <p>Real-time data visualization dashboard.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Chart.js</span>
+                            <span class="tech-tag">API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Demo</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 스킬 섹션 -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">스킬</h2>
+            <div class="skills-content">
+                <div class="skills-category">
+                    <h3>프론트엔드 스킬</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">HTML5</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="50%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">CSS3</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="45%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="40%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">React</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="35%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="30%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 연락처 섹션 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">연락처</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>함께 일해요!</h3>
+                    <p>새로운 프로젝트나 협업에 관심이 있으시다면 언제든 연락주세요.</p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:os160690@gmail.com" class="email-link">os160690@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="mailto:os160690@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com/os160960-crypto" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        <a href="https://instagram.com/sejin_elel07" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" novalidate>
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="이름" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="이메일" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subject" placeholder="제목" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="메시지" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">메시지 보내기</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 포트폴리오. 모든 권리 보유.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <button id="scrollTop" aria-label="맨 위로 이동" title="맨 위로" style="display:none">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</body>
+</html>
