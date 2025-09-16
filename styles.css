@@ -282,7 +282,7 @@ body {
 }
 
 .btn-primary {
-    background: rgba(36, 36, 36, 0.7);
+    background: rgba(37, 99, 235, 0.8);
     color: var(--text-color);
     border: 2px solid var(--primary-color);
     backdrop-filter: blur(15px);
@@ -292,12 +292,13 @@ body {
 .btn-primary:hover {
     background: rgba(36, 36, 36, 0.9);
     border-color: var(--secondary-color);
+    
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .btn-secondary {
-    background: transparent;
+    background: rgba(37, 99, 235, 0.8);
     color: var(--text-color);
     border: 2px solid var(--primary-color);
     backdrop-filter: blur(15px);
@@ -305,7 +306,7 @@ body {
 }
 
 .btn-secondary:hover {
-    background: rgba(36, 36, 36, 0.5);
+    background: rgba(36, 36, 36, 0.9);
     border-color: var(--secondary-color);
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
@@ -437,7 +438,7 @@ body {
 .badge-primary { background: var(--primary-color); color: #fff; border-color: var(--primary-color); }
 .badge-secondary { background: var(--secondary-color); color: #fff; border-color: var(--secondary-color); }
 .badge-accent { background: var(--secondary-color); color: #fff; border-color: var(--secondary-color); }
-.badge-outline { background: var(--badge-bg); color: var(--badge-text); border-color: var(--border-color); }
+.badge-outline { background: var(--secondary-color); color:#fff; border-color: var(--secondary-color); }
 
 /* badge positions within the circle */
 .profile-badges .badge:nth-child(1) { top: 8px; left: 50%; transform: translate(-50%, 0); }
@@ -484,7 +485,7 @@ section {
 
 /* 소개 섹션 */
 .about {
-    background: var(--section-bg);
+   
     position: relative;
 }
 
@@ -678,11 +679,7 @@ section {
     color: var(--secondary-color);
 }
 
-/* 스킬 섹션 */
-.skills {
-    background: var(--section-bg);
-    position: relative;
-}
+
 
 .skills::before {
     content: '';
@@ -1169,6 +1166,7 @@ section {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px var(--shadow);
 }
+
 
 .filter-btn.active {
     background: var(--primary-color);
