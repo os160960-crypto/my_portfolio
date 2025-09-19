@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="html.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme')||'light');</script>
 </head>
 <body>
@@ -50,8 +51,14 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">안녕하세요, 프론트엔드 개발자 오세진입니다.</h1>
-                <p class="hero-description">프론트엔드 개발자로 창의적이고 혁신적인 웹 솔루션을 만드는 것을 좋아합니다</p>
+                <h1 class="hero-title">프론트엔드 개발자 오세진</h1>
+                <p class="hero-description">창의적이고 사용자 중심의 웹 인터페이스를 만듭니다.</p>
+                <ul class="hero-keywords" aria-label="키워드">
+                    <li class="chip">꼼꼼함</li>
+                    <li class="chip">성실함</li>
+                    <li class="chip">팀워크</li>
+                    <li class="chip">지속적 학습</li>
+                </ul>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
                     <a href="#contact" class="btn btn-secondary">연락하기</a>
@@ -61,12 +68,6 @@
                 <div class="profile-card">
                     <div class="profile-img">
                         <img src="html.jpg" alt="오세진 프로필 사진" class="profile-photo">
-                    </div>
-                    <div class="profile-badges" aria-hidden="true">
-                        <span class="badge badge-primary">꼼꼼함</span>
-                        <span class="badge badge-accent">성실함</span>
-                        <span class="badge badge-secondary">팀워크</span>
-                        <span class="badge badge-outline">지속적 학습</span>
                     </div>
                 </div>
             </div>
@@ -123,12 +124,12 @@
             </div>
             <div class="projects-grid">
          
-                <div class="project-card">
-                    <img src="작업이미지.jpg" alt="작업 이미지">
+                <div class="project-card" data-category="frontend">
+                    <img src="작업이미지.jpg" alt="작업 이미지" loading="lazy" decoding="async" width="600" height="400">
                     <h3>태양과 지구의 공전 애니메이션</h3>
                     <p>이 작업은 집에서 심심해서 만든 태양과 지구의 공전 애니메이션 입니다. HTML CSS만 사용하여 만들었습니다.</p>
-                    <a href="https://github.com/os160960-crypto" target="_blank">GitHub</a>
-                    <a href="데모링크" target="_blank">Demo</a>
+                    <a href="https://github.com/os160960-crypto" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="데모링크" target="_blank" rel="noopener noreferrer">Demo</a>
                 </div>
                 <!-- 추가 작업도 같은 방식으로 반복 -->
             </div>
@@ -136,18 +137,34 @@
     </section>
 
     <!-- 스킬 섹션 -->
-    
-    <!-- head에 넣기 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-
-<!-- body에 넣기 -->
-<div class="skills">
-  <i class="devicon-html5-plain colored"></i>
-  <i class="devicon-css3-plain colored"></i>
-  <i class="devicon-javascript-plain colored"></i>
-  <i class="devicon-react-original colored"></i>
-</div>
-
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">스킬</h2>
+            <div class="skills-grid">
+                <div class="skill-card skill-item fade-in" data-name="HTML" aria-label="HTML" role="img" tabindex="0">
+                    <i class="devicon-html5-plain colored"></i>
+                </div>
+                <div class="skill-card skill-item fade-in" data-name="CSS" aria-label="CSS" role="img" tabindex="0">
+                    <i class="devicon-css3-plain colored"></i>
+                </div>
+                <div class="skill-card skill-item fade-in" data-name="JavaScript" aria-label="JavaScript" role="img" tabindex="0">
+                    <i class="devicon-javascript-plain colored"></i>
+                </div>
+                <div class="skill-card skill-item fade-in" data-name="React" aria-label="React" role="img" tabindex="0">
+                    <i class="devicon-react-original colored"></i>
+                </div>
+                <div class="skill-card skill-item fade-in" data-name="Photoshop" aria-label="Photoshop" role="img" tabindex="0">
+                    <i class="devicon-photoshop-plain colored"></i>
+                </div>
+                <div class="skill-card skill-item fade-in" data-name="Illustrator" aria-label="Illustrator" role="img" tabindex="0">
+                    <i class="devicon-illustrator-plain colored"></i>
+                </div>
+                <div class="skill-card skill-item fade-in" data-name="Git" aria-label="Git" role="img" tabindex="0">
+                    <i class="devicon-git-plain colored"></i>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- 연락처 섹션 -->
     <section id="contact" class="contact">

@@ -243,12 +243,16 @@ body {
 
 .hero-content {
     animation: slideInLeft 1s ease-out;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     line-height: 1.2;
 }
 
@@ -260,8 +264,29 @@ body {
 
 .hero-description {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     opacity: 0.9;
+}
+
+/* 키워드 칩 */
+.hero-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    list-style: none;
+}
+
+.chip {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    backdrop-filter: blur(8px);
 }
 
 .hero-buttons {
@@ -282,8 +307,8 @@ body {
 }
 
 .btn-primary {
-    background: rgba(37, 99, 235, 0.8);
-    color: var(--text-color);
+    background: rgba(36, 36, 36, 0.7);
+    color: #fff;
     border: 2px solid var(--primary-color);
     backdrop-filter: blur(15px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -292,22 +317,22 @@ body {
 .btn-primary:hover {
     background: rgba(36, 36, 36, 0.9);
     border-color: var(--secondary-color);
-    
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .btn-secondary {
-    background: rgba(37, 99, 235, 0.8);
-    color: var(--text-color);
+    background: transparent;
+    color: #fff;
     border: 2px solid var(--primary-color);
     backdrop-filter: blur(15px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .btn-secondary:hover {
-    background: rgba(36, 36, 36, 0.9);
+    background: rgba(36, 36, 36, 0.5);
     border-color: var(--secondary-color);
+    color: #fff;
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
@@ -348,6 +373,7 @@ body {
     animation: rotate 4s linear infinite;
     opacity: 0;
     transition: opacity 0.3s ease;
+       
 }
 
 .profile-card:hover::before {
@@ -409,12 +435,7 @@ body {
     pointer-events: none;
 }
 
-.profile-badges {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 4;
-}
+.profile-badges { display: none; }
 
 .badge {
     position: absolute;
@@ -438,12 +459,12 @@ body {
 .badge-primary { background: var(--primary-color); color: #fff; border-color: var(--primary-color); }
 .badge-secondary { background: var(--secondary-color); color: #fff; border-color: var(--secondary-color); }
 .badge-accent { background: var(--secondary-color); color: #fff; border-color: var(--secondary-color); }
-.badge-outline { background: var(--secondary-color); color:#fff; border-color: var(--secondary-color); }
+.badge-outline { background: var(--primary-color); color: #fff; border-color: var(--primary-color); }
 
 /* badge positions within the circle */
 .profile-badges .badge:nth-child(1) { top: 8px; left: 50%; transform: translate(-50%, 0); }
 .profile-badges .badge:nth-child(2) { top: 50%; left: 8px; transform: translate(0, -50%) rotate(-8deg); }
-.profile-badges .badge:nth-child(3) { bottom: 8px; left: 50%; transform: translate(-50%, 0); }
+.profile-badges .badge:nth-child(3) { bottom: 8px; left: 50%; transform: translate(-50%, 0); animation: badgeFloat 6s ease-in-out infinite; }
 .profile-badges .badge:nth-child(4) { top: 50%; right: 8px; transform: translate(0, -50%) rotate(8deg); }
 
 @keyframes badgeFloat {
@@ -485,7 +506,7 @@ section {
 
 /* 소개 섹션 */
 .about {
-   
+    background: var(--bg-color);
     position: relative;
 }
 
@@ -496,10 +517,7 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
-        radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 30%),
-        radial-gradient(circle at 90% 80%, rgba(30, 64, 175, 0.05) 0%, transparent 30%);
-    background-size: 100% 100%;
+    background-image: none;
     pointer-events: none;
 }
 
@@ -592,6 +610,9 @@ section {
 }
 
 /* 프로젝트 섹션 */
+.projects {
+    background: var(--bg-color);
+}
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -679,7 +700,17 @@ section {
     color: var(--secondary-color);
 }
 
+/* Focus visible for accessibility */
+:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+}
 
+/* 스킬 섹션 */
+.skills {
+    background: var(--bg-color);
+    position: relative;
+}
 
 .skills::before {
     content: '';
@@ -688,17 +719,82 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
-        linear-gradient(90deg, transparent 0%, rgba(37, 99, 235, 0.03) 50%, transparent 100%),
-        linear-gradient(0deg, transparent 0%, rgba(30, 64, 175, 0.03) 50%, transparent 100%);
-    background-size: 200px 200px;
+    background-image: none;
     pointer-events: none;
+}
+
+/* 스킬 아이콘 그리드 */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.25rem;
+}
+
+.skill-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 6px 18px var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.skill-card i {
+    font-size: 44px;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px var(--shadow);
+    border-color: var(--primary-color);
+}
+
+.skill-card::after {
+    content: attr(data-name);
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    letter-spacing: 0.2px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+[data-theme="dark"] .skill-card::after {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+}
+
+.skill-card:hover::after {
+    opacity: 1;
+    transform: translate(-50%, -2px);
 }
 
 .skills-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 3rem;
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.skill-icon {
+    font-size: 1.5rem;
 }
 
 .skills-category h3 {
@@ -1166,7 +1262,6 @@ section {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px var(--shadow);
 }
-
 
 .filter-btn.active {
     background: var(--primary-color);
