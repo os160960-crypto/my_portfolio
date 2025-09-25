@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="프론트엔드 개발자 오세진의 포트폴리오. 프로젝트, 스킬, 연락처 정보를 확인하세요.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; img-src 'self' data: https:; connect-src 'self';">
+    <title>포트폴리오 - 개발자</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="html.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme')||'light');</script>
+</head>
+<body>
+    <!-- 네비게이션 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Portfolio</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">홈</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">소개</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">프로젝트</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">스킬</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">연락처</a>
+                </li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="다크 모드 전환" aria-pressed="false">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="hamburger" aria-label="모바일 메뉴 열기" aria-controls="nav-menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 메인 섹션 -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">프론트엔드 개발자 오세진</h1>
+                <p class="hero-description">창의적이고 사용자 중심의 웹 인터페이스를 만듭니다.</p>
+                <ul class="hero-keywords" aria-label="키워드">
+                    <li class="chip">긍정적</li>
+                    <li class="chip">성실함</li>
+                    <li class="chip">팀워크</li>
+                    <li class="chip">꾸준한 학습</li>
+                </ul>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
+                    <a href="#contact" class="btn btn-secondary">연락하기</a>
+                    <a href="resume.pdf" class="btn btn-secondary" target="_blank" rel="noopener" download>이력서 다운로드</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-card">
+                    <div class="profile-img">
+                        <img src="html.jpg" alt="오세진 프로필 사진" class="profile-photo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 소개 섹션 -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">소개</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>개발자로서의 여정</h3>
+                    <p>저는 웹 개발에 관심이 많은 신입 개발자 고등학생 입니다.
+                    현재는 프론트엔드 개발에 집중하고 있으며, 사용자 친화적인 인터페이스를 만드는 것을 목표로 하고 있습니다.</p>
+                    <p>팀워크를 중요시 생각하고 있으며 열심히 하는 개발자가 되겠습니다.</p>
+                    
+                    <div class="education">
+                        <h4>학력</h4>
+                        <ul class="education-list">
+                            <li>연현중학교 졸업</li>
+                            <li>안양공업고등학교 (XR융합응용학과) 재학중</li>
+                            <li>대림대학교 진학 예정</li>
+                        </ul>
+                    </div>
+
+                    
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h4>신입</h4>
+                        <p>경력</p>
+                    </div>
+                    <div class="stat">
+                        <h4>열정</h4>
+                        <p>100%</p>
+                    </div>
+                    <div class="stat">
+                        <h4>학습</h4>
+                        <p>지속중</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 프로젝트 섹션 -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Project</h2>
+            <div class="projects-filter" role="tablist" aria-label="프로젝트 필터">
+                <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">전체</button>
+                <button class="filter-btn" data-filter="frontend" role="tab" aria-selected="false">프론트엔드</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="frontend">
+                    <div class="project-image">
+                        <i class="fas fa-globe" style="font-size: 4rem; color: var(--primary-color);"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>태양과 지구의 공전 애니메이션</h3>
+                        <p>HTML과 CSS만을 사용하여 만든 태양과 지구의 공전 애니메이션입니다. CSS 애니메이션과 transform 속성을 활용하여 우주의 움직임을 표현했습니다.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">Animation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/os160960-crypto" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="frontend">
+                    <div class="project-image">
+                        <img src="makt.png" alt="쇼핑몰 예시 이미지">
+                    </div>
+                    <div class="project-content">
+                        <h3>온라인 쇼핑몰 웹사이트</h3>
+                        <p>반응형 디자인 쇼핑몰 사이트 입니다. AI를 활용해서 만들었지만 직접 수정 하고 디자인 하였습니다.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsive</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/os160960-crypto" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>
+                            <a href="https://68ce6c61e58c8518809aa135--transcendent-buttercream-959158.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link">Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="project-card" data-category="frontend">
+                    <div class="project-image project-image--contain project-image--tall">
+                        <img src="game.png" alt="벽돌깨기 게임 이미지">
+                    </div>
+                    <div class="project-content">
+                        <h3>벽돌깨기 게임</h3>
+                        <p>HTML CSS를 활용하여 집에서 심심해 만든 플래시 게임형 입니다.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">Game</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/os160960-crypto" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>
+                                <a href="https://os160960-crypto.github.io/portfolio-minishop/" target="_blank" rel="noopener noreferrer" class="project-link">Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 스킬 섹션 -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skill & Tool</h2>
+            <div class="skills-grid">
+                <div class="skill-card skill-item fade-in" data-name="HTML" aria-label="HTML" role="img" tabindex="0">
+                    <i class="devicon-html5-plain colored"></i>
+                </div>
+                <div class="skill-card skill-item fade-in" data-name="JavaScript" aria-label="JavaScript" role="img" tabindex="0">
+                    <i class="devicon-javascript-plain colored"></i>
+                </div>
+                <div class="skill-card skill-item fade-in" data-name="React" aria-label="React" role="img" tabindex="0">
+                    <i class="devicon-react-original colored"></i>
+                </div>
+                <div class="skill-card skill-item fade-in" data-name="Photoshop" aria-label="Photoshop" role="img" tabindex="0">
+                    <i class="devicon-photoshop-plain colored"></i>
+                </div>
+                <div class="skill-card skill-item fade-in" data-name="Illustrator" aria-label="Illustrator" role="img" tabindex="0">
+                    <i class="devicon-illustrator-plain colored"></i>
+                </div>
+                <div class="skill-card skill-item fade-in" data-name="Git" aria-label="Git" role="img" tabindex="0">
+                    <i class="devicon-git-plain colored"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 연락처 섹션 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">연락처</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>함께 일해요!</h3>
+                    <p>이메일 인스타그램을 통해 연락주세요!</p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:os160690@gmail.com" class="email-link">os160690@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="mailto:os160690@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com/os160960-crypto" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        <a href="https://instagram.com/sejin_elel07" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 오세진 포트폴리오</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <button id="scrollTop" aria-label="맨 위로 이동" title="맨 위로" style="display:none">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</body>
+</html>
