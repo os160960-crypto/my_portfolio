@@ -52,7 +52,7 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">프론트엔드 개발자 오세진</h1>
+                <h1 class="hero-title"><span class="role-text">프론트엔드 개발자</span> <span class="name-gradient">오세진</span> 입니다.</h1>
                 <p class="hero-description">창의적이고 사용자 중심의 웹 인터페이스를 만듭니다.</p>
                 <ul class="hero-keywords" aria-label="키워드">
                     <li class="chip">긍정적</li>
@@ -92,7 +92,7 @@
                         <ul class="education-list">
                             <li>연현중학교 졸업</li>
                             <li>안양공업고등학교 (XR융합응용학과) 재학중</li>
-                            <li>대림대학교 진학 예정</li>
+                            <li>대림대학교 (Ai 시스템 과) 진학 예정</li>
                         </ul>
                     </div>
 
@@ -126,31 +126,9 @@
             </div>
             <div class="projects-grid">
                 <div class="project-card" data-category="frontend">
-                    <div class="project-image">
-                        <i class="fas fa-globe" style="font-size: 4rem; color: var(--primary-color);"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>태양과 지구의 공전 애니메이션</h3>
-                        <p>HTML과 CSS만을 사용하여 만든 태양과 지구의 공전 애니메이션입니다. CSS 애니메이션과 transform 속성을 활용하여 우주의 움직임을 표현했습니다.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">Animation</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/os160960-crypto" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="frontend">
-                    <div class="project-image">
-                        <img src="makt.png" alt="쇼핑몰 예시 이미지">
-                    </div>
                     <div class="project-content">
                         <h3>온라인 쇼핑몰 웹사이트</h3>
-                        <p>반응형 디자인 쇼핑몰 사이트 입니다. AI를 활용해서 만들었지만 직접 수정 하고 디자인 하였습니다.</p>
+                        <p>반응형 쇼핑몰 사이트 입니다. 심플하고 깔끔한 것이 좋아 현대적인 느낌을 줄이고 유저가 쉽게 다를 수 있도록 보기 좋게 만들었습니다.</p>
                         <div class="project-tech">
                             <span class="tech-tag">HTML</span>
                             <span class="tech-tag">CSS</span>
@@ -166,9 +144,6 @@
 
 
                 <div class="project-card" data-category="frontend">
-                    <div class="project-image project-image--contain project-image--tall">
-                        <img src="game.png" alt="벽돌깨기 게임 이미지">
-                    </div>
                     <div class="project-content">
                         <h3>벽돌깨기 게임</h3>
                         <p>HTML CSS를 활용하여 집에서 심심해 만든 플래시 게임형 입니다.</p>
@@ -221,20 +196,45 @@
             <h2 class="section-title">연락처</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>함께 일해요!</h3>
-                    <p>이메일 인스타그램을 통해 연락주세요!</p>
-                    <div class="contact-items">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:os160690@gmail.com" class="email-link">os160690@gmail.com</a>
+                    <p>프로젝트 협업 및 문의는 아래 연락처로 편하게 주세요. 빠르게 확인하겠습니다.</p>
+
+                    <div class="contact-box-grid">
+                        <div class="contact-box">
+                            <h4 class="contact-box__title">이메일</h4>
+                            <a href="mailto:os160960@gmali.com" class="contact-box__value">os160960@gmali.com</a>
+                        </div>
+                        <div class="contact-box">
+                            <h4 class="contact-box__title">전화번호</h4>
+                            <a href="tel:01024236697" class="contact-box__value">010-2423-6697</a>
+                        </div>
+                        <div class="contact-box">
+                            <h4 class="contact-box__title">위치</h4>
+                            <div class="contact-box__value">안양시, 대한민국</div>
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="mailto:os160690@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
                         <a href="https://github.com/os160960-crypto" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                         <a href="https://instagram.com/sejin_elel07" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
+
+                <form class="contact-form" aria-label="메시지 보내기">
+                    <h3 class="contact-heading">메시지 보내기</h3>
+                    <div class="form-group">
+                        <label for="cf-name">이름</label>
+                        <input id="cf-name" name="name" type="text" placeholder="이름을 입력해주세요" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="cf-email">이메일</label>
+                        <input id="cf-email" name="email" type="email" placeholder="이메일을 입력해주세요" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="cf-message">메시지</label>
+                        <textarea id="cf-message" name="message" placeholder="메시지를 입력해주세요" required></textarea>
+                    </div>
+                    <div class="form-alert" hidden>메시지가 성공적으로 전송되었습니다!</div>
+                    <button type="submit" class="btn btn-primary" aria-label="메시지 보내기">메시지 보내기</button>
+                </form>
             </div>
         </div>
     </section>
@@ -242,7 +242,7 @@
     <!-- 푸터 -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 오세진 포트폴리오</p>
+            <p>&copy; 2025 오세진 포트폴리오 입니다.</p>
         </div>
     </footer>
 

@@ -86,33 +86,34 @@ if (skillBars && skillBars.length > 0) {
 }
 
 // 연락처 폼 제출 (폼이 제거되어 주석 처리)
-// if (contactForm) {
-//     contactForm.addEventListener('submit', (e) => {
-//         e.preventDefault();
-//         
-//         // 폼 데이터 수집
-//         const formData = new FormData(contactForm);
-//         const name = formData.get('name');
-//         const email = formData.get('email');
-//         const subject = formData.get('subject');
-//         const message = formData.get('message');
-//         
-//         // 간단한 유효성 검사
-//         if (!name || !email || !subject || !message) {
-//             showNotification('모든 필드를 입력해주세요.', 'error');
-//             return;
-//         }
-//         
-//         if (!isValidEmail(String(email))) {
-//             showNotification('올바른 이메일 주소를 입력해주세요.', 'error');
-//             return;
-//         }
-//         
-//         // 성공 메시지 (실제로는 서버로 전송)
-//         showNotification('메시지가 성공적으로 전송되었습니다!', 'success');
-//         contactForm.reset();
-//     });
-// }
+if (document.querySelector('.contact-form')) {
+    const form = document.querySelector('.contact-form');
+    const alertBox = form.querySelector('.form-alert');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const name = String(formData.get('name') || '');
+        const email = String(formData.get('email') || '');
+        const message = String(formData.get('message') || '');
+
+        if (!name || !email || !message) {
+            showNotification('모든 필드를 입력해주세요.', 'error');
+            return;
+        }
+        if (!isValidEmail(email)) {
+            showNotification('올바른 이메일 주소를 입력해주세요.', 'error');
+            return;
+        }
+
+        // 성공 메시지 표현 (데모)
+        if (alertBox) {
+            alertBox.hidden = false;
+            alertBox.textContent = '메시지가 성공적으로 전송되었습니다!';
+        }
+        showNotification('메시지가 성공적으로 전송되었습니다!', 'success');
+        form.reset();
+    });
+}
 
 // 이메일 유효성 검사
 function isValidEmail(email) {
@@ -181,10 +182,10 @@ function typeWriter(element, text, speed = 100) {
 
 // 페이지 로드 시 타이핑 효과 시작
 window.addEventListener('load', () => {
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-        const originalText = heroTitle.innerHTML;
-        typeWriter(heroTitle, originalText, 50);
+    const roleEl = document.querySelector('.role-text');
+    if (roleEl) {
+        const originalText = roleEl.textContent;
+        typeWriter(roleEl, originalText, 50);
     }
 });
 
