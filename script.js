@@ -180,7 +180,7 @@ function typeWriter(element, text, speed = 100) {
     type();
 }
 
-// 특별한 타이핑 효과 - "오세진"에 그라데이션 적용
+// 특별한 타이핑 효과 - "오세진"에만 그라데이션 적용
 function typeWriterWithGradient(element, text, speed = 100) {
     let i = 0;
     element.innerHTML = '';
@@ -190,8 +190,8 @@ function typeWriterWithGradient(element, text, speed = 100) {
             const char = text.charAt(i);
             if (i < 3) { // "오세진" 부분 (0, 1, 2번째 글자)
                 element.innerHTML += `<span class="name-gradient">${char}</span>`;
-            } else { // "입니다." 부분
-                element.innerHTML += char;
+            } else { // "입니다." 부분 (3번째 글자부터)
+                element.innerHTML += `<span style="color: #fff;">${char}</span>`;
             }
             i++;
             setTimeout(type, speed);
@@ -204,6 +204,7 @@ function typeWriterWithGradient(element, text, speed = 100) {
 // 페이지 로드 시 타이핑 효과 시작
 window.addEventListener('load', () => {
     const typingElement1 = document.getElementById('typing-text-1');
+    const typingElementName = document.getElementById('typing-text-name');
     const typingElement2 = document.getElementById('typing-text-2');
     
     if (typingElement1) {
@@ -212,14 +213,23 @@ window.addEventListener('load', () => {
         typeWriter(typingElement1, originalText1, 80);
     }
     
-    // "프론트엔드 개발자" 타이핑 완료 후 "오세진 입니다." 시작
+    // "프론트엔드 개발자" 타이핑 완료 후 "오세진" 시작
+    setTimeout(() => {
+        if (typingElementName) {
+            const originalTextName = typingElementName.textContent;
+            typingElementName.textContent = '';
+            typeWriter(typingElementName, originalTextName, 80);
+        }
+    }, 800); // "프론트엔드 개발자" 타이핑 시간 (9글자 × 80ms = 720ms) + 여유시간
+    
+    // "오세진" 타이핑 완료 후 "입니다." 시작
     setTimeout(() => {
         if (typingElement2) {
             const originalText2 = typingElement2.textContent;
             typingElement2.textContent = '';
-            typeWriterWithGradient(typingElement2, originalText2, 80);
+            typeWriter(typingElement2, originalText2, 80);
         }
-    }, 800); // "프론트엔드 개발자" 타이핑 시간 (9글자 × 80ms = 720ms) + 여유시간
+    }, 1040); // "프론트엔드 개발자"(800ms) + "오세진"(240ms) 타이핑 시간
 });
 
 // 스크롤 진행률 표시
