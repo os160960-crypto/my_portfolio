@@ -272,16 +272,6 @@ body {
     animation: hueShift 6s linear infinite;
 }
 
-/* soft outline for readability */
-.name-gradient::after {
-    content: attr(data-shadow);
-    position: absolute;
-    inset: 0;
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(255,255,255,0.6);
- 
-    pointer-events: none;
-}
 
 @keyframes hueShift {
     0% { filter: hue-rotate(0deg) saturate(1); }
@@ -312,13 +302,6 @@ body {
     word-break: keep-all;
 }
 
-.typing-text.name-gradient {
-    background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: hueShift 6s linear infinite;
-}
 
 /* "오세진"에만 그라데이션 적용 */
 .name-gradient {
@@ -330,13 +313,6 @@ body {
 }
 
 
-/* (reverted) name emphasis styles removed */
-
-.highlight {
-    color: #fff;
-    text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 255, 255, 0.4);
-    font-weight: 800;
-}
 
 .hero-description {
     font-size: 1.2rem;
@@ -522,48 +498,7 @@ body {
     pointer-events: none;
 }
 
-.profile-badges { display: none; }
 
-.badge {
-    position: absolute;
-    pointer-events: auto;
-    background: var(--badge-bg);
-    color: var(--badge-text);
-    border: 1px solid var(--border-color);
-    border-radius: 9999px;
-    padding: 8px 14px;
-    font-size: 0.85rem;
-    font-weight: 800;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
-    white-space: nowrap;
-    z-index: 5;
-    animation: badgeFloat 6s ease-in-out infinite;
-    backdrop-filter: blur(6px);
-    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-}
-
-.badge-primary { background: var(--primary-color); color: #fff; border-color: var(--primary-color); }
-.badge-secondary { background: var(--secondary-color); color: #fff; border-color: var(--secondary-color); }
-.badge-accent { background: var(--secondary-color); color: #fff; border-color: var(--secondary-color); }
-.badge-outline { background: var(--primary-color); color: #fff; border-color: var(--primary-color); }
-
-/* badge positions within the circle */
-.profile-badges .badge:nth-child(1) { top: 8px; left: 50%; transform: translate(-50%, 0); }
-.profile-badges .badge:nth-child(2) { top: 50%; left: 8px; transform: translate(0, -50%) rotate(-8deg); }
-.profile-badges .badge:nth-child(3) { bottom: 8px; left: 50%; transform: translate(-50%, 0); animation: badgeFloat 6s ease-in-out infinite; }
-.profile-badges .badge:nth-child(4) { top: 50%; right: 8px; transform: translate(0, -50%) rotate(8deg); }
-
-@keyframes badgeFloat {
-    0%, 100% { margin-top: 0; }
-    50% { margin-top: -6px; }
-}
-
-@media (max-width: 768px) {
-    .badge { font-size: 0.8rem; padding: 7px 12px; }
-    .profile-badges .badge:nth-child(2) { left: 6px; }
-    .profile-badges .badge:nth-child(4) { right: 6px; }
-}
 
 /* 사용자 접근성: 모션 최소화 선호 시 애니메이션 완화 */
 @media (prefers-reduced-motion: reduce) {
@@ -1133,11 +1068,6 @@ section {
     color: var(--secondary-color);
 }
 
-.contact-info h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: var(--text-color);
-}
 
 .contact-description {
     color: var(--text-color);
@@ -1159,33 +1089,7 @@ section {
     text-align: center;
 }
 
-.contact-items {
-    margin-bottom: 2rem;
-    display: flex;
-    justify-content: center;
-}
 
-.contact-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-    color: var(--text-color);
-    opacity: 0.8;
-}
-
-/* email icon removed */
-
-.email-link {
-    color: var(--text-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.email-link:hover {
-    color: var(--primary-color);
-}
 
 .social-links {
     display: flex;

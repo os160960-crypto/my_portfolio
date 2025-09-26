@@ -180,26 +180,6 @@ function typeWriter(element, text, speed = 100) {
     type();
 }
 
-// 특별한 타이핑 효과 - "오세진"에만 그라데이션 적용
-function typeWriterWithGradient(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            const char = text.charAt(i);
-            if (i < 3) { // "오세진" 부분 (0, 1, 2번째 글자)
-                element.innerHTML += `<span class="name-gradient">${char}</span>`;
-            } else { // "입니다." 부분 (3번째 글자부터)
-                element.innerHTML += `<span style="color: #fff;">${char}</span>`;
-            }
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    
-    type();
-}
 
 // 페이지 로드 시 타이핑 효과 시작
 window.addEventListener('load', () => {
