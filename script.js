@@ -266,75 +266,6 @@ if (projectCards && projectCards.length > 0) {
 
 // 스포트라이트 제거 (사용자 피드백 반영)
 
-// 스킬 카테고리 탭 기능 (선택사항)
-function createSkillTabs() {
-    const skillsSection = document.querySelector('.skills');
-    if (!skillsSection) return;
-    
-    const skillsContent = document.querySelector('.skills-content');
-    const categories = document.querySelectorAll('.skills-category');
-    
-    if (categories.length <= 1) return;
-    
-    // 탭 버튼 생성
-    const tabContainer = document.createElement('div');
-    tabContainer.className = 'skill-tabs';
-    tabContainer.style.cssText = `
-        display: flex;
-        justify-content: center;
-        margin-bottom: 2rem;
-        gap: 1rem;
-    `;
-    
-    categories.forEach((category, index) => {
-        const tab = document.createElement('button');
-        tab.className = `skill-tab ${index === 0 ? 'active' : ''}`;
-        tab.textContent = category.querySelector('h3').textContent;
-        tab.style.cssText = `
-            padding: 0.8rem 1.5rem;
-            border: 2px solid #e5e7eb;
-            background: white;
-            color: #6b7280;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        `;
-        
-        tab.addEventListener('click', () => {
-            // 모든 탭 비활성화
-            tabContainer.querySelectorAll('.skill-tab').forEach(t => {
-                t.classList.remove('active');
-                t.style.background = 'white';
-                t.style.color = '#6b7280';
-                t.style.borderColor = '#e5e7eb';
-            });
-            
-            // 클릭된 탭 활성화
-            tab.classList.add('active');
-            tab.style.background = '#6366f1';
-            tab.style.color = 'white';
-            tab.style.borderColor = '#6366f1';
-            
-            // 해당 카테고리만 표시
-            categories.forEach((cat, i) => {
-                cat.style.display = i === index ? 'block' : 'none';
-            });
-        });
-        
-        tabContainer.appendChild(tab);
-    });
-    
-    skillsSection.querySelector('.container').insertBefore(tabContainer, skillsContent);
-    
-    // 첫 번째 카테고리만 표시
-    categories.forEach((cat, index) => {
-        cat.style.display = index === 0 ? 'block' : 'none';
-    });
-}
-
-// 스킬 탭 생성
-createSkillTabs();
 
 // 로딩 애니메이션
 window.addEventListener('load', () => {
@@ -470,6 +401,4 @@ if (filterBtns && filterBtns.length > 0 && projectCardsForFilter && projectCards
 
 console.log('포트폴리오 웹사이트가 성공적으로 로드되었습니다! 🚀');
 
-// 다크모드 디버깅
-console.log('Theme toggle button:', themeToggle);
-console.log('Current theme:', document.documentElement.getAttribute('data-theme'));
+// ...existing code...

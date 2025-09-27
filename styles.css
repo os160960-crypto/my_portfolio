@@ -99,7 +99,7 @@ body {
 .nav-logo a {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: pink;
     text-decoration: none;
 }
 
@@ -321,6 +321,9 @@ body {
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-bottom: 1.25rem;
+    /*키워드 가운데로*/
+    justify-content: center;
+    
     list-style: none;
 }
 
@@ -712,6 +715,7 @@ section {
     border: 1px solid var(--border-color);
     backdrop-filter: saturate(1.05) blur(6px);
 }
+
 
 .project-card:hover {
     transform: translateY(-6px);
@@ -1173,9 +1177,10 @@ section {
 
 /* 연락처 폼 버튼 스타일 */
 .contact-form .btn-primary {
-    background: var(--primary-color);
+    background: pink;
     color: white;
-    border: 2px solid var(--primary-color);
+    border: 1px solid pink;
+    backdrop-filter: blur(15px);
     font-weight: 600;
     letter-spacing: 0.5px;
     position: relative;
@@ -1210,12 +1215,7 @@ section {
     left: 100%;
 }
 
-.contact-form .btn-primary:hover {
-    background: var(--secondary-color);
-    border-color: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
-}
+
 
 /* 푸터 */
 .footer {
