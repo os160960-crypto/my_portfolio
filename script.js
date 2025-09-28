@@ -144,4 +144,46 @@ const scrollSpyObserver = new IntersectionObserver((entries) => {
 
 sections.forEach(section => scrollSpyObserver.observe(section));
 
+// 스크롤 애니메이션
+const fadeElements = document.querySelectorAll('.project-card, .skill-item, .stat, .contact-box');
+
+const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+});
+
+fadeElements.forEach(el => {
+    el.classList.add('fade-in');
+    fadeObserver.observe(el);
+});
+
+// 스킬 탭 기능
+const tabBtns = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // 모든 탭 버튼에서 active 클래스 제거
+        tabBtns.forEach(b => b.classList.remove('active'));
+        // 모든 탭 콘텐츠에서 active 클래스 제거
+        tabContents.forEach(content => content.classList.remove('active'));
+        
+        // 클릭된 버튼에 active 클래스 추가
+        btn.classList.add('active');
+        
+        // 해당하는 탭 콘텐츠에 active 클래스 추가
+        const targetTab = btn.getAttribute('data-tab');
+        const targetContent = document.getElementById(targetTab);
+        if (targetContent) {
+            targetContent.classList.add('active');
+        }
+    });
+});
+
 console.log('포트폴리오 웹사이트가 로드되었습니다!');
