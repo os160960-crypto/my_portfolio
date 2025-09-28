@@ -1,56 +1,14 @@
-/* 기본 스타일 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --bg-color: #ffffff;
-    --text-color: #1a1a1a;
-    --card-bg: #ffffff;
-    --section-bg: #fafafa;
-    --border-color: #e1e5e9;
-    --shadow: rgba(0, 0, 0, 0.08);
-    --primary-color: #2563eb;
-    --secondary-color: #1e40af;
-    --accent-color: #0f172a;
-    --notify-success: #10b981;
-    --notify-error: #ef4444;
-    --badge-bg: #ffffff;
-    --badge-text: #1a1a1a;
-    --photo-overlay: rgba(0,0,0,0.12);
-    color-scheme: light;
-}
-
-:root[data-theme="dark"] {
-    --bg-color: #0f0f0f;
-    --text-color: #f8fafc;
-    --card-bg: #000000;
-    --section-bg: #000000;
-    --border-color: #2a2a2a;
-    --shadow: rgba(0, 0, 0, 0.4);
-    --primary-color: #3b82f6;
-    --secondary-color: #2563eb;
-    --accent-color: #3b82f6;
-    --notify-success: #10b981;
-    --notify-error: #ef4444;
-    --badge-bg: #1e1e1e;
-    --badge-text: #f8fafc;
-    --photo-overlay: rgba(255,255,255,0.06);
-    color-scheme: dark;
-}
-
 body {
     font-family: 'Noto Sans KR', sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    background-image: radial-gradient(1200px 600px at 10% -10%, rgba(99,102,241,0.05), transparent 60%),
-                      radial-gradient(1000px 500px at 110% 10%, rgba(59,130,246,0.04), transparent 60%);
-    background-attachment: fixed;
-    overflow-x: hidden;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #333;
+    background-color: #f8f9fa;
 }
 
 .container {
@@ -59,7 +17,6 @@ body {
     padding: 0 20px;
 }
 
-/* 네비게이션 */
 .navbar {
     position: fixed;
     top: 0;
@@ -67,23 +24,7 @@ body {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 20px var(--shadow);
-}
-
-[data-theme="dark"] .navbar {
-    background: rgba(26, 26, 26, 0.95);
-}
-
-/* 스크롤 시 네비게이션 테마 대응 */
-.navbar.scrolled {
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
-}
-
-[data-theme="dark"] .navbar.scrolled {
-    background: rgba(26, 26, 26, 0.98);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -99,7 +40,11 @@ body {
 .nav-logo a {
     font-size: 1.5rem;
     font-weight: 700;
-    color: pink;
+    background: #020024;
+    background: linear-gradient(108deg, rgba(2, 0, 36, 1) 0%, rgba(121, 9, 115, 1) 34%, rgba(0, 212, 255, 1) 72%, rgba(47, 126, 138, 1) 89%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     text-decoration: none;
 }
 
@@ -111,67 +56,13 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-color);
+    color: #333;
     font-weight: 500;
     transition: color 0.3s ease;
-    position: relative;
 }
 
 .nav-link:hover {
-    color: var(--primary-color);
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--primary-color);
-    transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
-.nav-link.active {
-    color: var(--primary-color);
-}
-
-.nav-link.active::after {
-    width: 100%;
-}
-
-/* 다크모드 토글 버튼 */
-.theme-toggle {
-    background: var(--primary-color);
-    color: var(--text-color);
-    border: none;
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 1.2rem;
-    margin-left: 1rem;
-}
-
-.theme-toggle:hover {
-    background: var(--secondary-color);
-    transform: scale(1.1);
-}
-
-.theme-toggle i {
-    transition: transform 0.3s ease;
-}
-
-[data-theme="dark"] .theme-toggle i {
-    transform: rotate(180deg);
+    color: #2563eb;
 }
 
 .hamburger {
@@ -183,53 +74,18 @@ body {
 .bar {
     width: 25px;
     height: 3px;
-    background-color: var(--text-color);
+    background-color: #333;
     margin: 3px 0;
     transition: 0.3s;
 }
 
-/* 히어로 섹션 */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: 
-        linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%),
-        url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
-    background-size: cover, cover;
-    background-position: center, center;
-    background-blend-mode: overlay;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.4) 100%);
-    z-index: 1;
-    backdrop-filter: blur(3px);
-}
-
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-    z-index: 2;
-    animation: float 20s ease-in-out infinite;
-    backdrop-filter: blur(1px);
 }
 
 .hero-container {
@@ -240,285 +96,109 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
-    position: relative;
-    z-index: 3;
 }
 
 .hero-content {
-    animation: slideInLeft 1s ease-out;
     min-height: 320px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .hero-title {
     font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     line-height: 1.3;
-    text-align: left;
+    text-align: center;
 }
 
-/* Emphasized animated name */
-.name-gradient {
-    display: inline-block;
-    background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0 0 0 rgba(0,0,0,0);
-    position: relative;
-    animation: hueShift 6s linear infinite;
+.name-highlight {
+    color: #ffd700;
 }
-
-
-@keyframes hueShift {
-    0% { filter: hue-rotate(0deg) saturate(1); }
-    50% { filter: hue-rotate(90deg) saturate(1.2); }
-    100% { filter: hue-rotate(0deg) saturate(1); }
-}
-
-
-.typing-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    line-height: 1.3;
-    gap: 0.1rem;
-}
-
-.typing-text {
-    display: inline-block;
-    color: #fff;
-    overflow: hidden;
-    white-space: nowrap;
-    word-break: keep-all;
-}
-
-
-/* "오세진"에만 그라데이션 적용 */
-.name-gradient {
-    background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: hueShift 6s linear infinite;
-}
-
-
 
 .hero-description {
     font-size: 1.2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     opacity: 0.9;
+    text-align: center;
 }
 
-/* 키워드 칩 */
 .hero-keywords {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 1.25rem;
-    /*키워드 가운데로*/
+    margin-bottom: 2rem;
     justify-content: center;
-    
-    list-style: none;
 }
 
 .chip {
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.2);
     color: #fff;
     padding: 6px 12px;
-    border-radius: 9999px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.2px;
-    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 .hero-buttons {
     display: flex;
     gap: 1rem;
+    justify-content: center;
 }
 
 .btn {
     padding: 12px 30px;
     border: none;
-    border-radius: 50px;
+    border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
     display: inline-block;
     text-align: center;
 }
 
 .btn-primary {
-    background: rgba(36, 36, 36, 0.7);
+    background: #2563eb;
     color: #fff;
-    border: 2px solid var(--primary-color);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid #2563eb;
 }
 
 .btn-primary:hover {
-    background: rgba(36, 36, 36, 0.9);
-    border-color: var(--secondary-color);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+    transform: translateY(-2px);
 }
 
 .btn-secondary {
     background: transparent;
     color: #fff;
-    border: 2px solid var(--primary-color);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #fff;
 }
 
 .btn-secondary:hover {
-    background: rgba(36, 36, 36, 0.5);
-    border-color: var(--secondary-color);
-    color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* 이력서 버튼 */
-.btn-accent {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: #fff;
-    border: 0;
-    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
-}
-
-.btn-accent:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.45);
+    background: #fff;
+    color: #2563eb;
+    transform: translateY(-2px);
 }
 
 .hero-image {
     display: flex;
     justify-content: center;
-    animation: slideInRight 1s ease-out;
-}
-
-.profile-card {
-    width: 280px;
-    height: 280px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 
-        0 0 0 1px rgba(255, 255, 255, 0.05),
-        0 15px 30px rgba(0, 0, 0, 0.2),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.profile-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    animation: rotate 4s linear infinite;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-       
-}
-
-.profile-card:hover::before {
-    opacity: 1;
-}
-
-.profile-card:hover {
-    transform: scale(1.02);
-    box-shadow: 
-        0 0 0 1px rgba(255, 255, 255, 0.1),
-        0 20px 40px rgba(0, 0, 0, 0.3),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-.profile-img {
-    font-size: 6rem;
-    color: var(--text-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
 }
 
 .profile-photo {
-    width: 100%;
-    height: 100%;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
-    box-shadow: 
-        0 0 0 1px rgba(255, 255, 255, 0.1),
-        0 10px 20px rgba(0, 0, 0, 0.2);
-    position: relative;
-    z-index: 2;
-    filter: contrast(1.05) brightness(1.02) saturate(1.05);
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.profile-photo:hover {
-    transform: scale(1.01);
-    border-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 
-        0 0 0 1px rgba(255, 255, 255, 0.2),
-        0 15px 30px rgba(0, 0, 0, 0.3);
-    filter: contrast(1.08) brightness(1.05) saturate(1.08);
-}
-
-.profile-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--photo-overlay);
-    border-radius: 50%;
-    z-index: 3;
-    pointer-events: none;
-}
-
-
-
-/* 사용자 접근성: 모션 최소화 선호 시 애니메이션 완화 */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
-    }
-
-    .project-card:hover {
-        transform: translateY(-3px) !important;
-        box-shadow: 0 12px 24px var(--shadow) !important;
-    }
-
-    .fade-in,
-    .name-emphasis::before {
-        opacity: 1 !important;
-        transform: none !important;
-    }
-}
-
-/* 섹션 공통 스타일 */
 section {
     padding: 80px 0;
 }
@@ -528,38 +208,24 @@ section {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 3rem;
-    color: var(--text-color);
+    color: #333;
     position: relative;
 }
 
 .section-title::after {
     content: '';
     position: absolute;
-    width: 72px;
+    width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    bottom: -12px;
+    background: #2563eb;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    border-radius: 9999px;
-    box-shadow: 0 2px 10px rgba(37,99,235,0.25);
+    border-radius: 2px;
 }
 
-/* 소개 섹션 */
 .about {
-    background: var(--bg-color);
-    position: relative;
-}
-
-.about::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: none;
-    pointer-events: none;
+    background: #fff;
 }
 
 .about-content {
@@ -572,30 +238,28 @@ section {
 .about-text h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: var(--text-color);
+    color: #333;
 }
 
 .about-text p {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
-    color: var(--text-color);
-    opacity: 0.8;
+    color: #666;
     line-height: 1.8;
 }
 
-/* 학력 섹션 */
 .education {
     margin-top: 2rem;
     padding: 1.5rem;
-    background: var(--card-bg);
-    border-radius: 15px;
-    box-shadow: 0 5px 15px var(--shadow);
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #2563eb;
 }
 
 .education h4 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: #2563eb;
     font-weight: 600;
 }
 
@@ -606,7 +270,7 @@ section {
 
 .education-list li {
     padding: 0.5rem 0;
-    color: var(--text-color);
+    color: #333;
     position: relative;
     padding-left: 1.5rem;
 }
@@ -621,151 +285,66 @@ section {
 .about-stats {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-}
-
-/* 자격증 · 수상 */
-.achievements {
-    margin-top: 1.5rem;
-    padding: 1.5rem;
-    background: var(--card-bg);
-    border-radius: 15px;
-    box-shadow: 0 10px 30px var(--shadow);
-    border: 1px solid var(--border-color);
-}
-
-.achievements h4 {
-    font-size: 1.2rem;
-    margin-bottom: 0.75rem;
-    color: var(--primary-color);
-}
-
-.achievements-list {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 0.75rem 1rem;
-}
-
-.achievements-list li {
-    padding: 0.75rem 1rem;
-    color: var(--text-color);
-    opacity: 0.95;
-    background: var(--section-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-}
-
-.achievements-list .placeholder {
-    opacity: 0.6;
+    gap: 1.5rem;
 }
 
 .stat {
     text-align: center;
     padding: 1.5rem;
-    background: var(--card-bg);
-    border-radius: 15px;
-    box-shadow: 0 10px 30px var(--shadow);
-    transition: transform 0.3s ease;
-}
-
-.stat:hover {
-    transform: translateY(-5px);
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
 }
 
 .stat h4 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: #2563eb;
     margin-bottom: 0.5rem;
 }
 
 .stat p {
-    color: var(--text-color);
-    opacity: 0.8;
+    color: #666;
     font-weight: 500;
 }
 
-/* 프로젝트 섹션 */
 .projects {
-    background: var(--bg-color);
-    position: relative;
+    background: #f8f9fa;
 }
-.projects::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: radial-gradient(60% 40% at 20% 10%, rgba(37, 99, 235, 0.06), transparent 60%),
-                radial-gradient(50% 35% at 85% 30%, rgba(30, 64, 175, 0.05), transparent 60%),
-                linear-gradient(180deg, rgba(99,102,241,0.025), rgba(99,102,241,0));
-}
+
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
 }
 
 .project-card {
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)) var(--card-bg);
-    border-radius: 20px;
+    background: #fff;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 10px 30px var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    border: 1px solid var(--border-color);
-    backdrop-filter: saturate(1.05) blur(6px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e9ecef;
 }
-
 
 .project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 40px var(--shadow);
-}
-
-.project-image {
-    height: 140px;
-    background: var(--section-bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4rem;
-    color: var(--primary-color);
-    border-bottom: 1px solid var(--border-color);
-    overflow: hidden;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .project-content {
-    padding: 1rem;
-}
-
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* 벽돌깨기 게임 썸네일: 전체 화면과 버튼이 보이도록 조정 */
-.project-image--contain {
-    background: #000;
-}
-.project-image--contain img {
-    object-fit: contain;
-}
-.project-image--tall {
-    height: 180px;
+    padding: 1.5rem;
 }
 
 .project-content h3 {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: var(--text-color);
+    color: #333;
 }
 
 .project-content p {
-    color: var(--text-color);
-    opacity: 0.8;
-    margin-bottom: 0.75rem;
+    color: #666;
+    margin-bottom: 1rem;
     line-height: 1.6;
 }
 
@@ -777,218 +356,68 @@ section {
 }
 
 .tech-tag {
-    background: var(--section-bg);
-    color: var(--text-color);
-    padding: 0.4rem 1rem;
-    border-radius: 6px;
+    background: #e9ecef;
+    color: #333;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
     font-size: 0.85rem;
     font-weight: 500;
-    border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
-}
-
-.tech-tag:hover {
-    background: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
 }
 
 .project-links {
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .project-link {
-    color: var(--primary-color);
+    color: #2563eb;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .project-link:hover {
-    color: var(--secondary-color);
+    color: #1d4ed8;
 }
 
-/* Focus visible for accessibility */
-:focus-visible {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 3px;
-}
-
-/* 스킬 섹션 */
 .skills {
-    background: var(--bg-color);
-    position: relative;
-}
-.skills::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: radial-gradient(60% 40% at 80% 20%, rgba(37, 99, 235, 0.06), transparent 60%),
-                radial-gradient(50% 35% at 15% 65%, rgba(30, 64, 175, 0.05), transparent 60%);
+    background: #fff;
 }
 
-.skills::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: none;
-    pointer-events: none;
-}
-
-/* 스킬 아이콘 그리드 */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.875rem;
-}
-
-.skill-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
-    height: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 10px 12px;
-    gap: 12px;
-    position: relative;
-    box-shadow: 0 6px 18px var(--shadow);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    transform-style: preserve-3d;
-    perspective: 600px;
-}
-
-.skill-card i {
-    font-size: 22px;
-    width: 40px;
-    height: 40px;
-    border-radius: 9999px;
-    background: var(--section-bg);
-    border: 1px solid var(--border-color);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.skill-card:hover {
-    transform: translateY(-6px) rotateX(6deg) rotateY(-4deg);
-    box-shadow: 0 12px 28px var(--shadow);
-    border-color: var(--primary-color);
-}
-
-.skill-card::after {
-    content: attr(data-name);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 64px;
-    background: transparent;
-    color: var(--text-color);
-    padding: 0;
-    border-radius: 0;
-    font-size: 0.92rem;
-    font-weight: 600;
-    letter-spacing: 0.1px;
-    opacity: 1;
-}
-
-[data-theme="dark"] .skill-card::after {
-    background: rgba(255,255,255,0.12);
-    color: #fff;
-}
-
-.skill-card:hover::after { opacity: 1; }
-
-@media (min-width: 1024px) {
-    .skills-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-.skills-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 3rem;
-}
-
-.skill-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.5rem;
-}
-
-.skill-icon {
-    font-size: 1.5rem;
-}
-
-.skills-category h3 {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: var(--text-color);
-    text-align: center;
-}
-
-.skill-items {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1.5rem;
 }
 
 .skill-item {
-    background: var(--card-bg);
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
     padding: 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.skill-name {
-    display: block;
-    font-weight: 600;
+.skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill-item i {
+    font-size: 2rem;
+    color: #2563eb;
     margin-bottom: 0.5rem;
-    color: var(--text-color);
+    display: block;
 }
 
-.skill-bar {
-    width: 100%;
-    height: 8px;
-    background: var(--border-color);
-    border-radius: 4px;
-    overflow: hidden;
+.skill-item span {
+    font-weight: 600;
+    color: #333;
 }
-
-.skill-progress {
-    height: 100%;
-    background: var(--primary-color);
-    border-radius: 4px;
-    width: 0;
-    transition: width 2s ease-in-out;
-}
-
-/* 연락처 섹션 */
 
 .contact {
-    position: relative;
-}
-
-.contact::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 20% 80%, rgba(30, 64, 175, 0.05) 0%, transparent 40%);
-    background-size: 100% 100%;
-    pointer-events: none;
+    background: #f8f9fa;
 }
 
 .contact-content {
@@ -996,143 +425,100 @@ section {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: start;
-    position: relative;
-    z-index: 1;
 }
 
 .contact-info {
     text-align: left;
 }
 
-.contact-box-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.contact-box {
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)) var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 1.5rem 1.5rem;
-    box-shadow: 0 8px 24px var(--shadow);
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-box:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 32px var(--shadow);
-}
-
-.contact-box::before {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    background: radial-gradient(60% 40% at 20% 10%, rgba(37,99,235,0.18), transparent 60%),
-                radial-gradient(50% 35% at 85% 30%, rgba(30,64,175,0.15), transparent 60%);
-    opacity: 0.6;
-    pointer-events: none;
-}
-
-.contact-box__title {
-    color: var(--primary-color);
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.contact-box__title::before {
-    content: '';
-    width: 4px;
-    height: 4px;
-    background: var(--primary-color);
-    border-radius: 50%;
-}
-
-.contact-box__value {
-    color: var(--text-color);
-    font-weight: 500;
-    text-decoration: none;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.contact-box__value:hover {
-    color: var(--secondary-color);
-}
-
-
 .contact-description {
-    color: var(--text-color);
-    opacity: 0.8;
-    margin-bottom: 3rem;
+    color: #666;
+    margin-bottom: 2rem;
     line-height: 1.8;
     text-align: center;
     font-size: 1.1rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .contact-info-title {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
-    color: var(--text-color);
+    color: #333;
     font-weight: 600;
     text-align: center;
 }
 
+.contact-box-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+}
 
+.contact-box {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-box__title {
+    color: #2563eb;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.contact-box__value {
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.contact-box__value:hover {
+    color: #2563eb;
+}
 
 .social-links {
     display: flex;
-    gap: 1.5rem;
-    justify-content: flex-start;
+    gap: 1rem;
+    justify-content: center;
     margin-top: 2rem;
 }
 
 .social-link {
-    width: 56px;
-    height: 56px;
-    background: var(--card-bg);
-    color: var(--primary-color);
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    color: #2563eb;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 16px;
+    border-radius: 50%;
     text-decoration: none;
     transition: all 0.3s ease;
-    border: 2px solid var(--border-color);
-    box-shadow: 0 4px 12px var(--shadow);
+    border: 2px solid #e9ecef;
     font-size: 1.2rem;
 }
 
 .social-link:hover {
-    background: var(--primary-color);
+    background: #2563eb;
     color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
-    border-color: var(--primary-color);
+    transform: translateY(-2px);
 }
 
 .contact-form {
-    background: var(--card-bg);
+    background: #fff;
     padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px var(--shadow);
-    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
 }
 
 .contact-heading {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
-    color: var(--text-color);
+    color: #333;
     font-weight: 600;
     text-align: center;
 }
@@ -1144,7 +530,7 @@ section {
 }
 
 .form-group label {
-    color: var(--text-color);
+    color: #333;
     font-weight: 600;
     margin-bottom: 0.5rem;
     font-size: 0.95rem;
@@ -1154,20 +540,19 @@ section {
 .form-group textarea {
     width: 100%;
     padding: 1rem;
-    border: 2px solid var(--border-color);
-    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
     font-size: 1rem;
     transition: border-color 0.3s ease;
     font-family: inherit;
-    background: var(--bg-color);
-    color: var(--text-color);
+    background: #fff;
+    color: #333;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    border-color: #2563eb;
 }
 
 .form-group textarea {
@@ -1175,91 +560,38 @@ section {
     min-height: 120px;
 }
 
-/* 연락처 폼 버튼 스타일 */
 .contact-form .btn-primary {
-    background: pink;
+    background: #2563eb;
     color: white;
-    border: 1px solid pink;
-    backdrop-filter: blur(15px);
+    border: none;
     font-weight: 600;
-    letter-spacing: 0.5px;
-    position: relative;
-    overflow: hidden;
     width: 100%;
     padding: 15px 30px;
     font-size: 1rem;
     transition: all 0.3s ease;
 }
 
+.contact-form .btn-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
 .form-alert {
-    background: rgba(16,185,129,0.15);
-    border: 1px solid rgba(16,185,129,0.4);
-    color: var(--text-color);
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
     padding: 0.75rem 1rem;
-    border-radius: 10px;
+    border-radius: 8px;
     margin-bottom: 1rem;
 }
 
-.contact-form .btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
-}
-
-.contact-form .btn-primary:hover::before {
-    left: 100%;
-}
-
-
-
-/* 푸터 */
 .footer {
-    background: linear-gradient(180deg, transparent, rgba(0,0,0,0.03)) var(--section-bg);
-    color: var(--text-color);
+    background: #333;
+    color: #fff;
     text-align: center;
     padding: 2rem 0;
 }
 
-/* 애니메이션 */
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* 반응형 디자인 */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -1270,7 +602,7 @@ section {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: var(--card-bg);
+        background-color: #fff;
         width: 100%;
         text-align: center;
         transition: 0.3s;
@@ -1306,12 +638,6 @@ section {
 
     .hero-title {
         font-size: 2.5rem;
-        text-align: center;
-    }
-
-    .typing-container {
-        align-items: center;
-        text-align: center;
     }
 
     .hero-buttons {
@@ -1334,21 +660,12 @@ section {
         gap: 3rem;
     }
 
-    .contact-box-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-
-    .skills-content {
-        grid-template-columns: 1fr;
-    }
-
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .section-title {
@@ -1370,13 +687,9 @@ section {
         font-size: 0.9rem;
     }
 
-    .profile-card {
-        width: 220px;
-        height: 220px;
-    }
-
-    .profile-img {
-        font-size: 4rem;
+    .profile-photo {
+        width: 250px;
+        height: 250px;
     }
 
     .about-stats {
@@ -1388,131 +701,6 @@ section {
     }
 
     .stat h4 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
-}
-
-/* 스크롤 애니메이션 */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* 스킬 바 애니메이션 */
-.skill-progress.animate {
-    animation: fillBar 2s ease-in-out forwards;
-}
-
-@keyframes fillBar {
-    from {
-        width: 0;
-    }
-    to {
-        width: var(--width);
-    }
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-20px) rotate(1deg);
-    }
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Scroll To Top */
-#scrollTop {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: none;
-    background: var(--primary-color);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 25px var(--shadow);
-    cursor: pointer;
-    z-index: 10002;
-    transition: transform 0.2s ease, background 0.3s ease, opacity 0.2s ease;
-    opacity: 0.95;
-}
-
-#scrollTop:hover {
-    transform: translateY(-3px);
-    background: var(--secondary-color);
-}
-
-#scrollTop i {
-    font-size: 1rem;
-}
-
-.projects-filter {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-}
-
-.filter-btn {
-    padding: 0.6rem 1rem;
-    border-radius: 9999px;
-    border: 1px solid var(--border-color);
-    background: var(--card-bg);
-    color: var(--text-color);
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.2s ease;
-}
-
-.filter-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px var(--shadow);
-}
-
-.filter-btn.active {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
-    color: #fff;
-}
-
-@media (max-width: 380px) {
-    .btn { padding: 8px 16px; font-size: 0.85rem; }
-    .section-title { font-size: 1.6rem; }
-    .project-content { padding: 1.25rem; }
-}
-
-img, video, canvas, svg { max-width: 100%; height: auto; }
-
-/* Devicon: 강화된 포토샵/일러스트 색감 (연하게 보이는 문제 보정) */
-.skill-card i.devicon-photoshop-plain,
-.skill-card i.devicon-photoshop-plain.colored {
-    color: #31A8FF; /* Photoshop 브랜드 컬러 */
-    filter: saturate(1.4) contrast(1.1);
-}
-
-.skill-card i.devicon-illustrator-plain,
-.skill-card i.devicon-illustrator-plain.colored {
-    color: #FF9A00; /* Illustrator 브랜드 컬러 */
-    filter: saturate(1.4) contrast(1.1);
 }
