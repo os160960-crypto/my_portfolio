@@ -83,7 +83,6 @@ body::before {
     font-size: 1.5rem;
     font-weight: 700;
     background: #020024;
-    background: linear-gradient(108deg, rgba(2, 0, 36, 1) 0%, rgba(121, 9, 115, 1) 34%, rgba(0, 212, 255, 1) 72%, rgba(47, 126, 138, 1) 89%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -603,7 +602,7 @@ section {
 }
 
 .project-link {
-    color: #333;
+    color: white;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
@@ -963,7 +962,7 @@ section {
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    background: skyblue;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
